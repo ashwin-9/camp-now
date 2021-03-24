@@ -1,6 +1,6 @@
 <% layout('/layouts/boilerplate') %>
 <div id="cluster-map"></div>
-<h1 class="main">All Campgrounds</h1>
+<h1 class="main text-center">All Campgrounds</h1>
 <div>
     <a href="/campgrounds/new">New Campground</a>
 </div>
@@ -8,24 +8,33 @@
 <div class="card mb-3">
     <div class="row">
         <div class="col-md-4">
-            <% if (campground.images.length) { %>
-            <% const rand = (arr) => arr[Math.floor(Math.random() * arr.length)] %>
-            <img src="<%= rand(campground.images).url %>" alt="<%= campground.name %>" class="img-fluid">
+            <% if (campground.images.length) { %> <% const rand = (arr) =>
+            arr[Math.floor(Math.random() * arr.length)] %>
+            <img
+                src="<%= rand(campground.images).url %>"
+                alt="<%= campground.name %>"
+                class="img-fluid"
+            />
             <% } else{ %>
-            <img src="https://res.cloudinary.com/hash09/image/upload/v1606388462/YelpCamp/lbf83marqxlckrgvwgbu.jpg"
-                alt="<%= campground.name %>" class="img-fluid">
+            <img
+                src="https://res.cloudinary.com/hash09/image/upload/v1606388462/YelpCamp/lbf83marqxlckrgvwgbu.jpg"
+                alt="<%= campground.name %>"
+                class="img-fluid"
+            />
             <% } %>
         </div>
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title"><%= campground.title %></h5>
-                <p class="card-text">
-                    <%= campground.description %>
-                </p>
+                <p class="card-text"><%= campground.description %></p>
                 <small class="text-muted d-block mb-3">
                     <%= campground.location %>
                 </small>
-                <a href="/campgrounds/<%= campground.id %>" class="btn btn-primary">View <%= campground.title %></a>
+                <a
+                    href="/campgrounds/<%= campground.id %>"
+                    class="btn btn-primary"
+                    >View <%= campground.title %></a
+                >
             </div>
         </div>
     </div>
