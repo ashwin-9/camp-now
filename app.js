@@ -24,8 +24,8 @@ const User = require('./models/user')
 //Error Middlewares
 const ExpressError = require('./utils/ExpressError')
 
-//Connecting to Mongo DB process.env.DB_URL ||
-const dbUrl = 'mongodb://localhost:27017/yelp-camp'
+//Connecting to Mongo DB
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/yelp-camp'
 mongoose
     .connect(dbUrl, {
         useNewUrlParser: true,
