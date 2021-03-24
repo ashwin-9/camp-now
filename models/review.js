@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require('mongoose')
+const { Schema } = mongoose
 
 const reviewSchema = new Schema({
     body: String,
@@ -10,6 +10,6 @@ const reviewSchema = new Schema({
     }
 })
 
-const Review = mongoose.model('Review', reviewSchema);
+const Review = mongoose.model('Review', reviewSchema)
 
-module.exports = Review;
+module.exports = Review
